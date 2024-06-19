@@ -11,3 +11,4 @@ def Add(request):
     val2 = int(request.POST["num2"])
     sum = val1+val2
     return render(request, 'result.html',{'result':sum})
+

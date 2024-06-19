@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for details in student %}
+        <div class="details">
+            <h2>{{ details.id }}</h2>
+            <p>{{ details.name }}</p>
+            <p>{{ details.branch }}</p>
+            <p>{{ details.age }}</p>
+            <p>{{ details.city }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

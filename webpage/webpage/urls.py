@@ -16,10 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Website import views
+# from Website import views
+from crud import views
+from django.urls import path
+from django.urls import include
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('employee', views.EmployeeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Message, name='Message'),
-    path('Add', views.Add, name='Add'),
+    # path('', views.Message, name='Message'),
+    # path('Add', views.Add, name='Add'),
+    path('Student/', views.StudentDetails.as_view()),
+    path("",include(router.urls))
 ]
