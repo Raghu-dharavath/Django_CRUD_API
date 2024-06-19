@@ -31,8 +31,8 @@ from django.http import request
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status,viewsets
-from .models import Student, Employee
-from .serializers import EmployeeSerializer, StudentSerializer
+from .models import Student, Employee, Mobile
+from .serializers import EmployeeSerializer, StudentSerializer, MobileSerializer
 
 
 class StudentDetails(APIView):
@@ -55,3 +55,7 @@ class StudentDetails(APIView):
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+
+class MobileViewSet(viewsets.ModelViewSet):
+    queryset = Mobile.objects.all()
+    serializer_class = MobileSerializer

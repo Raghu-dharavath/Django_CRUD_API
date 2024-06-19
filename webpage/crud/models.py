@@ -13,4 +13,9 @@ class Employee(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     salary = models.IntegerField()
-    
+
+class Mobile(models.Model):
+    name = models.CharField(max_length=20)
+    model = models.IntegerField()
+    price = models.IntegerField()
+    version = models.FloatField()    

@@ -24,11 +24,13 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('employee', views.EmployeeViewSet)
+router.register('mobile', views.MobileViewSet) 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.Message, name='Message'),
     # path('Add', views.Add, name='Add'),
     path('Student/', views.StudentDetails.as_view()),
+    path("",include(router.urls)),
     path("",include(router.urls))
 ]

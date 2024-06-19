@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Employee
+from .models import Employee, Mobile
 
 class StudentSerializer(serializers.Serializer):
     id = serializers.IntegerField(label="enter student id")
@@ -11,4 +11,9 @@ class StudentSerializer(serializers.Serializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
+        fields = '__all__'
+
+class MobileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mobile
         fields = '__all__'
